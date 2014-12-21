@@ -8,32 +8,28 @@
     <script data-main='./js/main' src="./js/libs/require.js"></script>
 </head>
 <body>
-	<!-- <script src="js/main.js"> </script> -->
 	<div class='container'> 
         <div class='header'>
             <div class='col-xs-1'>
-    	       <h2>Lib task</h2>
+    	       <h1>Lib task</h1>
             </div>
         </div>
 	</div>
 
+    <hr>
+
     <script type='text/tecdmplate' id = 'book-entry-template'> 
+        <div class='book-entry'>
         <div class='row'>
-            <li>
-                <h3> <%= title %> </h2>
-                <p> <%= author %> </p>
-                <p> <%= description %> </p>
-            </li>
+            <h2> <%= title %> </h2>
+            <div class='author'> <h3> by <%= author %> </h3> </div>
+            <p> <%= description %> </p>
+        </div>
         </div>
     </script>
 
-    <!-- <div class='col-xs-3'></div> -->
     <div class='container'>
-        <div class='col-xs-4'>
-            <div>
-            	<ul id="book-list">
-            	</ul>
-            </div>
+        <div id="book-list">
         </div>
     </div>
 

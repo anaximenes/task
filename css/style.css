@@ -19,3 +19,11 @@ h6, .h6 {
   font-weight: normal;
   color: #333;
 }
+
+.book-entry {
+	text-align: center
+}
+
+.author {
+	/*margin-left: 80px*/
+}
