@@ -4,17 +4,38 @@
     <meta charset="UTF-8">
     <title>Lib</title>
     <link rel=stylesheet href='css/bootstrap.min.css'>
+    <link rel=stylesheet href='css/style.css'>
     <script data-main='./js/main' src="./js/libs/require.js"></script>
 </head>
 <body>
 	<!-- <script src="js/main.js"> </script> -->
 	<div class='container'> 
-    	<h2>Lib task</h2>
+        <div class='header'>
+            <div class='col-xs-1'>
+    	       <h2>Lib task</h2>
+            </div>
+        </div>
 	</div>
 
-    <div class=book-list>
-    	<ul>
-    	</ul>
+    <script type='text/tecdmplate' id = 'book-entry-template'> 
+        <div class='row'>
+            <li>
+                <h3> <%= title %> </h2>
+                <p> <%= author %> </p>
+                <p> <%= description %> </p>
+            </li>
+        </div>
+    </script>
+
+    <!-- <div class='col-xs-3'></div> -->
+    <div class='container'>
+        <div class='col-xs-4'>
+            <div>
+            	<ul id="book-list">
+            	</ul>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>

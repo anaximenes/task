@@ -1,28 +1,33 @@
-//router.js
+//app.js
 
 define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'models',
+	'collections',
+	'views'
 	], 
-	function($, _, Backbone) {
-		var Router = Backbone.Router.extend({
-			routes: {
-				'!/books': 'showBooks',
-				'*defaultAction': 'default'
-			},
-			default: function() {
-				alert('def')
-			},
-			showBooks: function() {
-				alert('yo!')
-			}
-		})
+	function($, _, Backbone, BookModel, BookCollection, BookView) {
+		var books = [
+			{author: 'author1', title: 'title1'},
+			{author: 'author2', title: 'title2'},
+			{author: 'author2', title: 'title3'},
+			{author: 'author3', title: 'title4'}
+		]
 
-		var router = new Router()
+		var BookRender = function(book) {
+			var view = new BookView({model: book})
+			view.render()
+		}
 
-		Backbone.history.start({ pushState: false })
+		var init = function() {
+			var collection = new BookCollection(books)
+			_.each(collection.models, function(item){
+				BookRender(item)
+			})
+		}
 
-		return router
+		return {init: init}
 	}
 )

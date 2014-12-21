@@ -2,8 +2,8 @@
 require.config( {
   paths: {
     jquery: 'libs/jquery.min',
-    underscore: 'libs/underscore-min',
-    backbone: 'libs/backbone-min',
+    underscore: 'libs/underscore.min',
+    backbone: 'libs/backbone.min',
     bootstrap: 'libs/bootstrap.min'
   }
   // use: {
@@ -13,10 +13,9 @@ require.config( {
   // 	}
   // }
 } )
-require(['app'], function(router){
-	$("#container").html("QWEQWEQWE")
-	//alert('wtf?');
+
+require(['router', 'app'], function(router, app){
 	router.navigate('!/books', true)
 	console.log("ready")
-
+  app.init()
 })
