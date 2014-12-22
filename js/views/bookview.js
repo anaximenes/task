@@ -8,18 +8,26 @@ define([
 	'collections'
 	], function($, _, Backbone, BookModel, BookCollection){
 		var BookView = Backbone.View.extend({
-			// tagname: "button",
 
 			render: function(){
 				var text = _.template($('#book-entry-template').html())
-				// console.log(this.model.toJSON())
 				this.$el.html(text(this.model.toJSON()))
 				return this
 			},
 
 			events: {
-				'click .book-entry': 'toggleDescription'
-				// "mouseover .book-entry" : "toggleDescription"
+				'click .book-entry': 'toggleDescription',
+				"mouseover .book-entry" : "lightUp",
+				"mouseout .book-entry" : "lightDown"
+			},
+			lightUp: function() {
+				console.log('mouseover')
+
+				this.$el.css('background-color', 'aliceblue')
+			},
+			lightDown: function() {
+				console.log('mouseout')
+				this.$el.css('background-color', '#FEFFFD')
 			},
 			toggleDescription: function() {
 				console.log('click!')

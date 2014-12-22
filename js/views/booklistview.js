@@ -10,11 +10,8 @@ define([
 	], function($, _, Backbone, BookModel, BookCollection, BookView) {
 
 		var BookListView = Backbone.View.extend({
-			// el: '#book-list',
-			// sortingBy: 'author',
 
 			bookRender: function(book) {
-				// console.log(book)
 				var view = new BookView({model: book})
 				this.$el.append(view.render().el)
 			},
@@ -25,11 +22,13 @@ define([
 
 				collection.fetch({
 					success: function (response) {
-						var models = _.sortBy(response.models, function(it) {
-							console.log(sortingBy)
-							return it.get(sortingBy).toLowerCase()
-							// return it.get(this.sortingBy)
-						})
+						var models = response.models
+						if (sortingBy && sortingBy != 'none') {
+							models = _.sortBy(response.models, function(it) {
+								console.log(sortingBy)
+								return it.get(sortingBy).toLowerCase()
+							})
+						}
 						for (var item in models) {
 							this.bookRender(models[item])
 						}
@@ -38,7 +37,6 @@ define([
 						console.error(err)
 					}
 				})
-				console.log('  return smth')
 				return this
 			},
 		})

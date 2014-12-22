@@ -23,7 +23,6 @@ define([
 				} else {
 					this.sortingBy = 'author'
 				}
-				console.log(this.sortingBy)
 				this.render()
 			},
 

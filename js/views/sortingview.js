@@ -4,7 +4,6 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	// 'views/sortingview'
 	], function($, _, Backbone) {
 		var SortingButtonView = Backbone.View.extend({
 			
