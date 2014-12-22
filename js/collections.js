@@ -7,7 +7,10 @@ define([
 	'models'
 	], function($, _, Backbone, BookModel){
 		var BookCollection = Backbone.Collection.extend({
-			model: BookModel
+			url: 'api/books.json',
+			parse: function (res) {
+				return res;
+			}
 		})
 
 		return BookCollection

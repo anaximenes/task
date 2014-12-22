@@ -27,3 +27,16 @@ h6, .h6 {
 .author {
 	/*margin-left: 80px*/
 }
+
+.description {
+	display: none
+}
+
+.page-header {
+  text-align: center
+}
+
+.sorting {
+  margin-bottom: 50px;
+  text-align: center
+}

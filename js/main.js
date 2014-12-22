@@ -3,7 +3,8 @@ require.config( {
   paths: {
     jquery: 'libs/jquery.min',
     underscore: 'libs/underscore.min',
-    backbone: 'libs/backbone.min',
+    backbone: 'libs/backbone',
+    // backbone: 'libs/backbone.min',
     bootstrap: 'libs/bootstrap.min'
   }
   // use: {
@@ -14,8 +15,6 @@ require.config( {
   // }
 } )
 
-require(['router', 'app'], function(router, app){
-	router.navigate('!/books', true)
-	console.log("ready")
-  app.init()
+require(['router'], function(router) {
+  // app.init()
 })
